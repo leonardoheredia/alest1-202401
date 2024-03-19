@@ -4,13 +4,11 @@ import utils.ArrayUtils;
 
 public class Exercicio1 {
     public static void main(String[] args) {
-        int[] a = new int[5];
-        ArrayUtils.preencherArrayComValoresInteirosAleatorios(a,
-                100,
-                false);
-        ArrayUtils.imprimir(a);
-        if(pesquisaLinear(a, 44)) System.out.println("Oba!!! Achei!");
-        else System.out.println("NAO ACHEI");
+        int[] a = {15,20,23,26,28,32,37,40};
+        boolean b = buscaBinaria(a, 27, 0, a.length-1);
+        System.out.println(b);
+        //if(pesquisaLinear(a, 44)) System.out.println("Oba!!! Achei!");
+        //else System.out.println("NAO ACHEI");
     }
     public static boolean pesquisaLinear(int[] a, int chave) {
         for (int i = 0; i < a.length; i++) {
@@ -18,4 +16,28 @@ public class Exercicio1 {
         }
         return false;
     }
+    public static boolean buscaBinaria(int[] a, int chave, int inicio, int fim) {
+        if(inicio>fim) return false;
+        int meio = (inicio + fim) / 2;
+        if(a[meio]==chave) {
+            return true;
+        } else if(chave>a[meio]) {
+            inicio = meio + 1;
+            return buscaBinaria(a, chave, inicio, fim);
+        } else {
+            fim = meio - 1;
+            return buscaBinaria(a, chave, inicio, fim);
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
