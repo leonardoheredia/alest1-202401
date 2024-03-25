@@ -1,34 +1,60 @@
 package aula08_listas_lineares;
 
-import utils.ArrayUtils;
+
+import java.util.Arrays;
 
 public class ListaLinearEstatica {
-    private int CAPACIDADE;
-    private int tamanho;
+    private final int CAPACIDADE_INICIAL = 5;
+    private int capacidade;
+    private int tamanhoAtual;
     private String[] itens;
     public ListaLinearEstatica() {
-        tamanho = 0;
-        CAPACIDADE = 5;
-        itens = new String[CAPACIDADE];
+        capacidade = CAPACIDADE_INICIAL;
+        itens = new String[capacidade];
     }
     public void adicionar(String item) {
-        if(tamanho==CAPACIDADE) {
-            System.out.println("JA ERA! NAO TEM MAIS ESPACO");
+        if(tamanhoAtual>=capacidade) {
+            System.out.println("nao tem mais espaco");
             return;
         }
-        itens[tamanho] = item;
-        tamanho++;
+        itens[tamanhoAtual] = item;
+        tamanhoAtual++;
     }
-    public void imprimir() {
-        for (int i = 0; i < tamanho; i++) {
-            System.out.println(i + " - " + itens[i]);
+    public void adicionar(int posicao, String item) {
+        //implementar
+    }
+    public String pegarItem(int posicao) {
+        //implementar
+        return null;
+    }
+    public int pegarPosicao(String item) {
+        //implementar
+        return -1;
+    }
+    public void remover(int posicao) {
+        //implementar
+    }
+    public void limpar() {
+        //implementar
+    }
+    public boolean estaVazia() {
+        //implementar
+        return false;
+    }
+    public boolean contem(String item) {
+        //implementar
+        return false;
+    }
+    public int getTamanhoAtual() {
+        return tamanhoAtual;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Lista = { ");
+        for (int i = 0; i < tamanhoAtual; i++) {
+            sb.append(itens[i] + " ");
         }
+        return sb.append(" }").toString();
     }
-
-
-
-
-
-
-
 }

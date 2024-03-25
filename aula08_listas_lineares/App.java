@@ -6,10 +6,13 @@ public class App {
         listinha.adicionar("tomate");
         listinha.adicionar("cebola");
         listinha.adicionar("alho");
-        listinha.adicionar("detergente");
-        listinha.adicionar("shampoo");
-        listinha.adicionar("condicionador");
-        listinha.adicionar("refri");
-        listinha.imprimir();
+        System.out.println(listinha);
+
+        listinha.adicionar(0, "detergente"); //tem que adicionar detergente na posicao 0
+        listinha.adicionar("sabao");
+        System.out.println(listinha);
+
+        listinha.adicionar("maca");
+        System.out.println(listinha);
     }
 }
