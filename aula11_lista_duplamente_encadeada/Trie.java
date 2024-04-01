@@ -84,7 +84,10 @@ public class Trie {
         System.out.println(t.contem("JAT"));
         System.out.println(t.contem("JATO"));
         System.out.println(t.contem("JATOBA"));
-
+        /*
+        * Implementar metodo que receba um prefixo e mostre todas as
+        * palavras possiveis
+        * */
 
     }
 
