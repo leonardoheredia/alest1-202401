@@ -10,5 +10,10 @@ public class App {
         System.out.println(lista);
         lista.adicionar("salete");
         System.out.println(lista);
+
+        System.out.println(lista.contem("joao"));
+        System.out.println(lista.contem("cecilia"));
+        lista.adicionar(2, "joao");
+        System.out.println(lista);
     }
 }
