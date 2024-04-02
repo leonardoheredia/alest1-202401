@@ -1,66 +1,52 @@
 package aula11_lista_duplamente_encadeada;
 
+import java.sql.ClientInfoStatus;
+
 public class ListaDuplamenteEncadeada {
-    class Nodo {
+    private class Nodo {
         String item;
-        Nodo anterior;
         Nodo proximo;
+        Nodo anterior;
         public Nodo(String item) {
             this.item = item;
         }
     }
-    private Nodo inicio;
-    private Nodo fim;
-    private int tamanho;
+    Nodo inicio; //sentinela de inicio
+    Nodo fim; //sentinela fim
+    int tamanho;
     public ListaDuplamenteEncadeada() {
         inicio = new Nodo(null);
         fim = new Nodo(null);
         inicio.proximo = fim;
         fim.anterior = inicio;
-        tamanho = 0;
+
     }
     public void adicionar(String item) {
-        Nodo n = new Nodo(item);
-        if(tamanho==0) {
-            inicio.proximo = n;
-            n.proximo = fim;
-            n.anterior = inicio;
-            fim.anterior = n;
-        }
-        else {
-            n.proximo = fim;
-            n.anterior = fim.anterior;
-            fim.anterior.proximo = n;
-            fim.anterior = n;
-        }
-        tamanho++;
+       Nodo novo = new Nodo(item);
+       novo.proximo = fim;
+       novo.anterior = fim.anterior;
+       fim.anterior.proximo = novo;
+       fim.anterior = novo;
+       tamanho++;
+    }
+    public boolean contem(String item) {
+        return false;
     }
     public void adicionar(int posicao, String item) {
-        Nodo aux = inicio.proximo;
-        int p = 0;
-        while(aux!=null) {
-            if(posicao == p) {
-                Nodo n = new Nodo(item);
-                n.proximo = aux;
-                n.anterior = aux.anterior;
-                aux.anterior.proximo = n;
-                aux.anterior = n;
-                tamanho++;
-                return;
-            }
-            aux = aux.proximo;
-            p++;
-        }
-    }
 
+    }
+    public void limpar() {
+
+    }
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("Lista = { ");
         Nodo aux = inicio.proximo;
-        while (aux!=fim) {
+        while(aux!=fim) {
             sb.append(aux.item).append(" ");
             aux = aux.proximo;
         }
+        sb.append("} tamanho = " + tamanho);
         return sb.toString();
     }
 }
