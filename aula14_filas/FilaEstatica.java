@@ -15,11 +15,33 @@ public class FilaEstatica {
         fim = -1;
     }
     public void enfileirar(String item) {
+        if(fim+1==capacidade) { //vai estourar
+            duplicarCapacidade();
+        }
         itens[fim+1] = item;
         fim++;
         tamanho++;
     }
+    private void duplicarCapacidade() {
+        String[] arrayAnterior = new String[capacidade];
+        for (int i = 0; i < itens.length; i++) {
+            arrayAnterior[i] = itens[i];
+        }
+        int antigo_inicio = inicio;
+        int antigo_fim = fim;
 
+        capacidade = capacidade*2;
+        fim = -1;
+        inicio = 0;
+        tamanho = 0;
+        itens = new String[capacidade];
+
+        //enfileirar todo mundo que tinha antes
+        for (int i = antigo_inicio; i <=antigo_fim ; i++) {
+            enfileirar(arrayAnterior[i]);
+        }
+
+    }
 
     public String desenfileirar() {
         String retorno = itens[inicio];
