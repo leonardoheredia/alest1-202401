@@ -42,7 +42,6 @@ public class FilaEstatica {
         }
 
     }
-
     public String desenfileirar() {
         String retorno = itens[inicio];
         itens[inicio] = null;
@@ -62,4 +61,12 @@ public class FilaEstatica {
         sb.append(" tam=").append(tamanho);
         return sb.toString();
     }
+    public void limpar() {
+        //limpa a fila
+    }
+    public void mergear(FilaEstatica outraFila) {
+        //faz o merge da fila atual com a nova fila
+
+    }
+
 }
