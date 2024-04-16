@@ -8,11 +8,7 @@ public class FilaEstatica {
     private int inicio;
     private int fim;
     public FilaEstatica() {
-        capacidade = CAPACIDADE_INICIAL;
-        itens = new String[capacidade];
-        tamanho = 0;
-        inicio = 0;
-        fim = -1;
+        inicializarFila();
     }
     public void enfileirar(String item) {
         if(fim+1==capacidade) { //vai estourar
@@ -62,11 +58,20 @@ public class FilaEstatica {
         return sb.toString();
     }
     public void limpar() {
-        //limpa a fila
+        inicializarFila();
+    }
+    private void inicializarFila(){
+        capacidade = CAPACIDADE_INICIAL;
+        itens = new String[capacidade];
+        tamanho = 0;
+        inicio = 0;
+        fim = -1;
     }
     public void mergear(FilaEstatica outraFila) {
         //faz o merge da fila atual com a nova fila
-
+        for (int i = 0; i < outraFila.tamanho; i++) {
+            this.enfileirar(outraFila.itens[i]);
+        }
     }
 
 }
