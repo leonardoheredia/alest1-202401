@@ -1,4 +1,4 @@
-package aula17_exercicios;
+package aula18_exercicios.estruturas;
 
 public class PilhaDinamica {
     class Nodo {

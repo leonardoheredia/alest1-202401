@@ -10,5 +10,20 @@ public class App {
 
         System.out.println(lista);
         System.out.println(lista.getTamanho());
+
+        lista.adicionar(0, "tales");
+        System.out.println(lista);
+        lista.adicionar(1, "alexandre");
+        System.out.println(lista);
+        lista.adicionar(6, "joana");
+        System.out.println(lista);
+        lista.adicionar( "rafael");
+        System.out.println(lista);
+        lista.adicionar ("carla");
+        System.out.println(lista);
+
+
+
+
     }
 }

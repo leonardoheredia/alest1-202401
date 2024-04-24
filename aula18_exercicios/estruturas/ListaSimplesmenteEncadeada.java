@@ -1,4 +1,4 @@
-package aula10_lista_encadeada;
+package aula18_exercicios.estruturas;
 
 public class ListaSimplesmenteEncadeada {
     private class Nodo {
@@ -39,7 +39,7 @@ public class ListaSimplesmenteEncadeada {
         }
         return -1;
     }
-    public String bsucar(int posicao) {
+    public String buscar(int posicao) {
         int p = 0;
         Nodo aux = inicio;
         while(aux!=null || p>posicao) {

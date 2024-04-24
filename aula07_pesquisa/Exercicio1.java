@@ -29,6 +29,19 @@ public class Exercicio1 {
             return buscaBinaria(a, chave, inicio, fim);
         }
     }
+
+    public static boolean fd(int[] a, int c, int i, int f) {
+        if(i>f) return false;
+        int m = (i + f) / 2;
+        if(a[m]==c) return true;
+        else if(c>a[m]) {
+            i = m + 1;
+            return fd(a, c, i, f);
+        } else {
+            f = m - 1;
+            return fd(a, c, i, f);
+        }
+    }
 }
 
 
