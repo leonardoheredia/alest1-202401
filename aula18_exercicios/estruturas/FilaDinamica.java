@@ -48,4 +48,11 @@ public class FilaDinamica {
         }
         return sb.toString();
     }
+
+    public int getTamanho() {
+        return tamanho;
+    }
+    public boolean estaVazia() {
+        return tamanho==0;
+    }
 }

@@ -1,7 +1,9 @@
 package aula18_exercicios;
 
+import aula18_exercicios.estruturas.FilaDinamica;
 import aula18_exercicios.estruturas.ListaLinearEstatica;
 import aula18_exercicios.estruturas.ListaSimplesmenteEncadeada;
+import aula18_exercicios.estruturas.PilhaDinamica;
 
 public class AppListas {
     public static void main(String[] args) {
@@ -18,10 +20,23 @@ public class AppListas {
         //remover o item na ultima posicao
 
 
-        exemploListaLinearEstatica(); //falta o remover
+        //exemploListaLinearEstatica(); //falta o remover
         //exemploListaSimplesmenteEncadeada();
+        questaProva();
     }
 
+    public static void questaProva() {
+        FilaDinamica fd = new FilaDinamica();
+        for (int i = 10; i <= 50; i+=10) {
+            String item = Integer.toString(i);
+            fd.enfileirar(item);
+        }
+        PilhaDinamica pd = new PilhaDinamica();
+        while(!fd.estaVazia()) pd.empilhar(fd.desenfileirar());
+        while(!pd.estaVazia()) {
+            System.out.println(pd.desempilhar());
+        }
+    }
 
     public static void exemploListaSimplesmenteEncadeada() {
         ListaSimplesmenteEncadeada l = new ListaSimplesmenteEncadeada();
@@ -60,4 +75,5 @@ public class AppListas {
         l.remover(l.getTamanhoAtual()-1);
         System.out.println(l);
     }
+
 }

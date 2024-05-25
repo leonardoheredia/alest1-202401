@@ -61,4 +61,12 @@ public class PilhaDinamica {
         sb.append("base = " + base.item + ", topo = " + topo.item);
         return sb.toString();
     }
+
+    public int getTamanho() {
+        return tamanho;
+    }
+
+    public boolean estaVazia() {
+        return tamanho==0;
+    }
 }
