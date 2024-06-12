@@ -41,13 +41,31 @@ public class ArvoreBinariaPesquisa {
         }
         tamanho++;
     }
-    public void adicionarRecursivo(int chave) {
-        adicionarRecursivo(chave, raiz);
+    public void adicionar2(int chave) { //usando recursividade
+        Nodo n = new Nodo(chave);
+        if(raiz==null) {
+            raiz = n;
+        }
+        else {
+            adicionarRecursivo(n, raiz);
+        }
+        tamanho++;
     }
-    private void adicionarRecursivo(int chave, Nodo n) {
-        //IMPLEMENTAR
-        //if(chave<=n.chave) //chamar a recursao com a subarvore da esquerda
-
+    private void adicionarRecursivo(Nodo n, Nodo pai) {
+       if(n.chave<=pai.chave) {
+           if(pai.esquerda==null) {
+               pai.esquerda = n;
+               n.pai = pai;
+           }
+           else adicionarRecursivo(n, pai.esquerda);
+       }
+       else {
+           if(pai.direita==null) {
+               pai.direita = n;
+               n.pai = pai;
+           }
+           else adicionarRecursivo(n, pai.direita);
+       }
 
     }
 

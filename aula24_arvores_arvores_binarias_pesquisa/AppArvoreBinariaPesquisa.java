@@ -21,6 +21,6 @@ public class AppArvoreBinariaPesquisa {
         System.out.println("Caminho central  : " + abp.getCaminhoCentral());
 
         //TESTAR
-        abp.adicionarRecursivo(100);
+        //abp.adicionarRecursivo(100);
     }
 }
